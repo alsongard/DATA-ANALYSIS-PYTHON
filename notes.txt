@@ -1,5 +1,16 @@
 GOOD CODING PRACTISES
 VARIABLES
 naming - not start with number and no whitespace and no hyphens
-correct = varNumber / var_number
+correct = varNumber || var_number
 
+string methods
+upper(), capitalize(), lower()
+
+string name or a variable name
+
+"monday".upper()
+"monday".capitalize()
+"MONDAY".lower()
+"MONDAY".replace("mon", "tues")
+instead of a string use a variable name
+myvar.method()
