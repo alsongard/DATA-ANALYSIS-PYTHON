@@ -15,7 +15,5 @@ total = bags * price
 print("the total price of {} bags is : {}".format(bags, total))
 newProfit = profit_per_Bag * bags
 print("total profit made from selling 500 bags is {}".format(newProfit))
-
-
-
+print(type(newProfit))
 ##market system for calculating profits, analysing sells in an organization and draw charts

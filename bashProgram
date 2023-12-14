@@ -1,0 +1,8 @@
+#!/bin/bash
+
+myvar=2
+myvariable=3
+
+if [ "$myvar" != "$myvariable" ]; then
+    echo "not equal"
+fi

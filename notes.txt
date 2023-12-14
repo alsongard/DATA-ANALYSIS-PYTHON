@@ -1,0 +1,5 @@
+GOOD CODING PRACTISES
+VARIABLES
+naming - not start with number and no whitespace and no hyphens
+correct = varNumber / var_number
+
