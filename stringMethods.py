@@ -27,3 +27,11 @@ print("favourite music of user is {} and applying capitalize() methods yields {}
 print("favourite music of user is {} and applying lower() methods yields {}".format(music, music.lower()))
 print("the string will be converted to a list below :\n  {}".format(myFruits))
 print("converted : \n {}".format(myFruits.split(",")))
+
+
+fname = input("Enter full names of user : \n")
+age = input("enter age of user : \n")
+course = input("enter the course your taking: \n")
+print("testing on data concatenation")
+print(type(age))
+print("His name is " + fname + "and age is " + age + " pursuing " + course) 
