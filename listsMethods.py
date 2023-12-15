@@ -63,3 +63,12 @@ print(myFav)
 ##sorted() use this to sort a list
 sortedData = sorted(myFav)
 print("sorted data in myFav is : \n {}".format(sortedData))
+
+
+##ascending and descending order
+myNumbers = [1,10,9,5,6,2,5,21,13,16,11,19,30]
+#to sort the list in ascending order
+print("the myNumbers list will be sorted from ascending and descending order\nuse sorted or sort method and then on descending use reverse")
+sortedLists = sorted(myNumbers)
+print("the sorted list is  in ascending order: \n {}".format(sortedLists))
+print("the sorted list in descending order is : \n{}".format(sortedLists[::-1]))
