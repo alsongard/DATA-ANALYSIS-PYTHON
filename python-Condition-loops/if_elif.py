@@ -2,6 +2,9 @@
     the if elif is a short form of if else if statement
     used for checking multiple conditions
 
+    Opposite to a chain of if  statements where each condition is evaulated indipendently,
+    once a condition in the if else statement is true it exits the code
+
     create grade system
 """
 

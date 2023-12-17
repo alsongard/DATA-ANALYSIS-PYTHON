@@ -13,7 +13,7 @@ line = "*"
 # print(len(line))
 
 while len(line) <= 10:
-    print(line.reverse())
+    print(line)
     line = line + "*"
 
 while len(line) > 0:

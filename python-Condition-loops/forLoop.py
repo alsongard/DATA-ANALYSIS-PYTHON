@@ -21,11 +21,3 @@ mytuple = "HI", "there", "myname", "is", "gard"
 for item in mytuple:
     print(item)
 
-#dictionary
-myDictionary = dict(firstName = "gard", secondName = "alson", age = 23, gender = "male")
-#or another way to declare a dictionary can be done
-elements =  {"firstname":"Gard","secondName":"Alson","age":23, "maritalStatus":"single"}
-print("the type of element is {}".format(type(elements)))
-print(type(myDictionary))
-for key in myDictionary:
-    print("the dictionary's key is {} and it's value is {}".format(key, myDictionary[key]))
