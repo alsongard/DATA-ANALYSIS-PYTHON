@@ -54,4 +54,6 @@ for item in sadWords:
 
 print("the number of sad feedbacks are {}".format(sadNumber))
             
-
+#fractionNumber
+sadFraction = sadNumber / len(tweets)
+print(sadFraction)
