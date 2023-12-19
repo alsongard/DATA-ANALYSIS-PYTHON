@@ -13,7 +13,11 @@
     r is the monthly interest rate(annual rate divided by 12 months)
     n is the total number of payments(loan term in months)
 """
-
-def calculateMonthlyInstallment(amount):
-    emi = amount /12
+amount = input("enter the amount of pay of house : \n")
+duration = input("Enter the number of monts for payment : \n")
+def calculateMonthlyInstallment(amount, time):
+    durationTime = int(duration) * 12
+    emi = int(amount) / durationTime
     print("the EMI is ${}".format(emi))
+
+calculateMonthlyInstallment(amount, duration)
