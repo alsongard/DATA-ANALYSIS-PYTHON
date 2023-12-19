@@ -3,7 +3,7 @@ import numpy as np
     Another examples of ease and performance of numpy operations
 """
 array1 = list(range(1000000))#result in a list of 0 - 999,999
-array2 = list(range(1000000))#result in list of 1,000,000 - 1,999,999
+array2 = list(range(1000000,2000000))#result in list of 1,000,000 - 1,999,999
 #convert to nump array
 array1_np = np.array(array1)
 array2_np = np.array(array2)

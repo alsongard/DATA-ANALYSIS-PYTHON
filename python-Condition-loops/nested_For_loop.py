@@ -1,16 +1,17 @@
 """
     in a nested for loop, useful for looping in a list of a list or a sequence of a sequence
+    brilliance in the following statements
 """
 
 myList = [ {"name": "gard", "age":23, "gender":"male"}, {"name": "alson", "age":23, "gender":"male"}]
 
 for item in myList:
+    print("the dictionary is {}".format(item))
     for key in item:
         print("the key is {} and value is {}".format(key, item[key]))
 
 
 months = ["January", "February", "March"]
-
 for item in months:
     for day in item:
         if item == "January":
