@@ -12,7 +12,10 @@ print(len(myArray))
 i = 0
 j = 0
 while i < len(myArray):
-    print(myArray[i])
     for item in myArray[i]:
         print(item)
     i = i + 1
+    # print(myArray[i])
+    # for item in myArray[i]:
+    #     print(item)
+    # i = i + 1
