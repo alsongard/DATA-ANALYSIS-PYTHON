@@ -8,7 +8,9 @@ import numpy as np
     to convert:
             np.array()
     to perform multiplication:
-            use mat or @ method
+            @ method --->> npArray1 @ npArray2
+        or
+                np.matplot(nparray1, nparray2)
 """
 
 climate_data = [
