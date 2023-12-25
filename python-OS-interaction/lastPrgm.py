@@ -13,8 +13,7 @@ def header_Obtain(header_line):
     headers = header_line.strip().split(",")
     return headers
 header_data = header_Obtain(data_list[0])
-print(header_data)
-print("\n")
+
 
 
 def values_Obtain(data_lines):
@@ -29,9 +28,6 @@ def values_Obtain(data_lines):
                 values.append(item)
     return values
 line_data = values_Obtain(data_list[1])
-print(line_data)
-print("\n")
-
 
 def create_item_dict(header, values):
     result = {}
@@ -40,8 +36,7 @@ def create_item_dict(header, values):
     return result
 
 data_dictionary = create_item_dict(header_data, line_data)
-print(data_dictionary)
-print("\n")
+
 
 def readCsv(path):
     result = []
