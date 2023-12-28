@@ -174,18 +174,47 @@ print(covid_df)
 print(covid_df.date)
 print(type(covid_df.date))
 #convert the object or covid_df.date to datetime
-#to convert the  date data column to date data type use the pd.datetime[dataFrameObject.column]
-covid_df['date'] = pd.datetime(covid_df.date)
+#to convert the  date data column to date data type use the pd.to_datetime[dataFrameObject.column]
+#remember we use pd.to_datetime(dateFrameObject.column4date)
+covid_df['date'] = pd.to_datetime(covid_df.date)
 print(covid_df.date)
 print(type(covid_df.date))
 #extract different parts the date using DateTimeIndex()
-covid_df.['year'] = pd.DateTimeIndex(covid_df.date).year
-covid_df['weekday'] = pd.DateTimeIndex(covid_df.date).week
+dataFrameObject['new_column'] = pd.DateTimeIndex(dataFrameObject.column4Date).year/day/month/weekday
+covid_df['year'] = pd.DateTimeIndex(covid_df.date).year
+covid_df['week'] = pd.DateTimeIndex(covid_df.date).weekday
 covid_df['month'] = pd.DateTimeIndex(covid_df.date).month
 covid_df['day'] = pd.DateTimeIndex(covid_df.date).day
 print(covid_df)
-print(dtype(covid_df.date.dtype))
+print(dtype(covid_df.date.dtype))#returns datetime64[ns]
+#performing overall metrics for a month
+#procedures are : select the month, choose a the subset of columns adn use the sum method
+#query rows for May
+covid_df_May = covid_df[covid_df.month == 5]
+#query for year
+covid_df_year = covid_df[covid_df.year == 2023]
+#selecting the subset of columns
+covid_df_may_metrics = covid_df_may[['new_cases', 'new_deaths', 'new_tests']]
+covid_may_totals = covid_df_may_metrics.sum()
+print(covid_may_totals)
+print(f"the type of {type(covid_may_totals)} and the dtype is {covid_may_totals.dtype}")
+all the above operations can be combined to one single statement using 
+covid_df[covid_df.month == 5][['new_cases', 'new_deaths', 'new_tests']].sum()
+#check if number of cases is Sunday is higher than the mean
+cases_average = covid_df.new_cases.mean()
+print(cases_average)
+sunday_cases = covid_df[covid_df.day == 6].new_cases.mean()
+or
+sunday_cases = covid_df[covid_df.day == 6]
+average_cases_sunday = sunday_cases.new_cases.mean()
+print(average_cases_sunday)
 
+			#GROUPING & AGGREGATION
+covid_month_data_df = covid_df.groupby('month')[['new_cases','new_deaths','new_tests']].sum()
+covid_year_data_df = covid_df.groupby('year')[['new_cases', 'new_deaths', 'new_tests']].sum()#when data is huge
+print(covid_month_data_df)
+
+the month represents which element in the covid_df (dataFrame Object) will be used for grouping data
 
 
 
