@@ -3,7 +3,7 @@ import urllib.request
 urlllib.request.retreive ( web-url, file-name-location)
 	import pandas as pd  #alias used in the prgm is pd
 covid_df = pd.read_csv("file_path")
-	to read data frm fiile use 
+	to read data frm file use 
 	Data is read and stored in a DataFrame structure which is a core object 		in Pandas library. Most variables have a suffix variableName_df
 type(covid_df)
 	return DataFrame structure
@@ -52,7 +52,7 @@ print(covid_df)
 	Example of retrieving data from column  new_deaths by using the indexing notation
 print(covid_df["new_deaths"])
 	the data returned above will of the key new_deaths and values which are lists containing the same data type
-print(type(covid_df["new_deaths"])
+print(type(covid_df["new_deaths"]))
 <class 'pandas.core.series.Series'>
 	return a Series 
 	each column in a dataFrame object /dataFrame is called a Series which is essentially a nump array with the same mthds and properties
@@ -61,10 +61,10 @@ print(type(covid_df["new_deaths"])
 print(covid_df['new_deaths'][110])
 #at() method
 	pandas provide a similar method to the above by using the at[]method takes 2 arguments
-print(covid_df.at[row_number, column_data]
-print(covid_df.at[243, new_deaths or any column data]
+print(covid_df.at[row_number, column_data])
+print(covid_df.at[243, new_deaths or any column data])
 #column_name
-	another way to access a dataFrame column is using the name of that colum in our case
+	another way to access a dataFrame column is using the name of that column in our case
 print(covid_df.new_deaths)
 print(covid_df.new_cases)
 print(covid_df.new_test)
@@ -90,7 +90,7 @@ new_deaths           1.0
 new_tests        53541.0
 Name: 243, dtype: object
 	it return all the data of that row including the keys/header and with their values
-print(type(type(covid_df.loc[234]))
+print(type(covid_df.loc[234]))
 #head() #tail()
 	the head method is used to return a the first 5 lines of the dataFrame object or the given number of lines
 print(covid_df.head() or covid_df.head(5))
@@ -100,7 +100,7 @@ print(covid_df.tail() or covid_df.tail())
 	the method above returns the row number/index that has a valid index number and not Nan
 	Nan results when the row of the comma seperated value file has no value it's empty  and not zero
 print(covid_df.new_test.first_valid_index())
-
+111 //it has returned the index 111
 #loc[]
 	one can also use the .loc[] to print the range of the values
 print(covid_df.loc[108:133])
