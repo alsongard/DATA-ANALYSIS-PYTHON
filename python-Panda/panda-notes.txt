@@ -164,7 +164,27 @@ with pd.option_context("display.max_rows", 250):
 #to remove the new_column use the drop mthd
 #covid_df.drop(column=['positive_reate], inplace=True)
 
-
+			#WORKING WITH DATES
+the pandas library offers many methods to work with dates
+#read file
+import pandas as pd
+covid_df = pd.read_csv("file-location")
+print(covid_df)
+#read the date column 
+print(covid_df.date)
+print(type(covid_df.date))
+#convert the object or covid_df.date to datetime
+#to convert the  date data column to date data type use the pd.datetime[dataFrameObject.column]
+covid_df['date'] = pd.datetime(covid_df.date)
+print(covid_df.date)
+print(type(covid_df.date))
+#extract different parts the date using DateTimeIndex()
+covid_df.['year'] = pd.DateTimeIndex(covid_df.date).year
+covid_df['weekday'] = pd.DateTimeIndex(covid_df.date).week
+covid_df['month'] = pd.DateTimeIndex(covid_df.date).month
+covid_df['day'] = pd.DateTimeIndex(covid_df.date).day
+print(covid_df)
+print(dtype(covid_df.date.dtype))
 
 
 
