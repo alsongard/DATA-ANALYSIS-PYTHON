@@ -42,3 +42,11 @@ print(positive_rate_data)
 covid_df["positive_rates"]= covid_df.new_cases / covid_df.new_tests
 with pd.option_context("display.max_rows", 250):
     display(covid_df)
+
+print("\n")
+print("Getting data using sort_valeus() method : ")
+print("10 days in which the number of cases were high ")
+# high_cases_df = covid_df.sort_values("new_cases", ascending=True).head(10) this returns the days in which cases were low
+high_cases_df = covid_df.sort_values("new_cases", ascending=False).head(10) 
+print("the following data represents the days in which covid cases were high")
+print(high_cases_df) #it can be seen the month of march has the highest cases

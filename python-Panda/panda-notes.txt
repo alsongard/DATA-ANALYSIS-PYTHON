@@ -52,7 +52,7 @@ print(covid_df)
 	Example of retrieving data from column  new_deaths by using the indexing notation
 print(covid_df["new_deaths"])
 	the data returned above will of the key new_deaths and values which are lists containing the same data type
-print(type(covid_df["new_deaths"])
+print(type(covid_df["new_deaths"]))
 <class 'pandas.core.series.Series'>
 	return a Series 
 	each column in a dataFrame object /dataFrame is called a Series which is essentially a nump array with the same mthds and properties
@@ -61,8 +61,8 @@ print(type(covid_df["new_deaths"])
 print(covid_df['new_deaths'][110])
 #at() method
 	pandas provide a similar method to the above by using the at[]method takes 2 arguments
-print(covid_df.at[row_number, column_data]
-print(covid_df.at[243, new_deaths or any column data]
+print(covid_df.at[row_number, column_data])
+print(covid_df.at[243, new_deaths or any column data])
 #column_name
 	another way to access a dataFrame column is using the name of that colum in our case
 print(covid_df.new_deaths)
@@ -90,7 +90,7 @@ new_deaths           1.0
 new_tests        53541.0
 Name: 243, dtype: object
 	it return all the data of that row including the keys/header and with their values
-print(type(type(covid_df.loc[234]))
+print(type(covid_df.loc[234]))
 #head() #tail()
 	the head method is used to return a the first 5 lines of the dataFrame object or the given number of lines
 print(covid_df.head() or covid_df.head(5))
@@ -118,7 +118,7 @@ covid_df = pd.read_csv("./myDAta/covid-results.csv")
 total_cases = covid_df.new_cases.sum()
 total_deaths = covid_df.new_deaths.sum()
 
-#overall death rate(ration of deaths to cases
+#overall death rate(ration of deaths to cases)
 death_rate = (covid_df.new_deaths.sum() / covid_df.new_cases.sum())
 
 #overall number of test conducted given prior covid test is 935410 test
@@ -162,8 +162,14 @@ covid_df["positive_rates"] = covid_df.new_cases / covid_df.new_tests
 with pd.option_context("display.max_rows", 250):
 	display(covid_df)
 #to remove the new_column use the drop mthd
-#covid_df.drop(column=['positive_reate], inplace=True)
+#covid_df.drop(column=['positive_rate], inplace=True)
 
+also one can sort data in rows using the .sort_values() method which takes in the "column", order(which can be ascending or descending)
+E.g 
+	covid_df.sort_values("new_cases", ascending=False).head(10)
+	month of march has the highest cases the largest being 6557.0
+	
+	
 			#WORKING WITH DATES
 the pandas library offers many methods to work with dates
 #read file
@@ -269,3 +275,46 @@ result_df = merged_df[['date',
 print(result_df)
 #to write data to a file use the to_csv() function/method which takes 2 arg one the dataframeObject, second the index of the dataFrame by default
 result_df.to_csv("results.csv", index=None)
+
+
+						#BASIC PANDA PLOTTING
+						
+#pandas offers a way to plot data using .plot() method which takes a dataFrame variable,column to plot 
+#also for one to use panda u must import the matplotlib
+import matplotlib.pyplot as plt
+result_df.new_cases.plot()
+plt.show()
+#however the plot doesn't show dates with relation to the new_cases in the graph, it uses the number of rows on the x-axis which is 250, to change to dates use:
+result_df.set_index('date', inPlace="True")
+#from this part it can be seen that the data uses the dates as the index and one can request the entire row of data based on the date
+#based on one plot for comparisons
+result_df.new_cases.plot()
+result_df.new_deaths.plot()
+
+#bases on 1 plot for comparisons
+result_df.total_cases.plot()
+result_df.total_deaths.plot()
+
+#death rate and positive vary over time
+
+death_rate = result_df.total_deaths / result_df.total_cases
+#diviving 2 columns of data expect a new column of data
+print(death_rate)
+death_rate.plot(title="Death Rete")
+
+positive_rate = result_df.total_cases / result_df.total_tests
+print(positive_rate)
+positive_rate.plot(title="Positive Rate")
+
+#plotting use bar chart
+#for new_cases
+covid_month_data_df.new_cases.plot(kind="bar")
+##using groupby to group data based on the group(element)
+#also for test
+covid_month_data_df.new_tests.plot(kind="bar")
+
+
+
+
+
+
