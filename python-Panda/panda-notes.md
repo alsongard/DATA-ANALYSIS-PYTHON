@@ -53,7 +53,7 @@ print(covid_df)
 print(covid_df["new_deaths"])
 	the data returned above will of the key new_deaths and values which are lists containing the same data type
 print(type(covid_df["new_deaths"]))
-<class 'pandas.core.series.Series'>
+``<class 'pandas.core.series.Series'>``
 	return a Series 
 	each column in a dataFrame object /dataFrame is called a Series which is essentially a nump array with the same mthds and properties
 	np.array(arrayName or [list_of_values])
