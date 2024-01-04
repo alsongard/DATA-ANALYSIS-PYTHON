@@ -1,8 +1,8 @@
 """
-tuples is an immutable list - it's values cannot be modified or changed
-tuples are created with a  ()brackets
-conversion of tuples to list and vice versa
-use tuples() or list() functions to convert the respective data
+    tuples is an immutable list - it's values cannot be modified or changed
+    tuples are created with a  ()brackets
+    conversion of tuples to list and vice versa
+    use tuples() or list() functions to convert the respective data
 """
 
 print("\t\tTUPLES AND TUPLE'S METHODS")

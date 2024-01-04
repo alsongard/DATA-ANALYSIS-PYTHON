@@ -1,5 +1,5 @@
 """
-    this is a file to show all tutorials for string methdos
+    this is a file to show all tutorials for string methods
     string methods
     upper(), capitalize(), lower(), split()
 
@@ -14,12 +14,12 @@
 """
 
 #capture the day name of the day from the user
-print("User the following methods used in string data types\n\tupper()\n\tcapitalizae()\n\tlower()\n\treplace()\n\tsplit()")
+print("Use the following methods used in string data types : \n\tupper()\n\tcapitalizae()\n\tlower()\n\treplace()\n\tsplit()")
 print("Use the replace keyword to remove the data in the variable 'day' ")
 
 day = input("Enter the day of the day : \n")
 print("day entered by the user is {}".format(day))
-print("to replace the day entered we use the replace() method, changed rom {} to {}".format(day, day.replace(day, "wednesday")))
+print("to replace the day entered we use the replace() method, changed from {} to {}".format(day, day.replace(day, "wednesday")))
 myFruits = "watermelon, lemon, banana, apple, carrot, tomatoes, mangoes"
 music = input("Enter your favourite music : \n")
 print("favourite music of user is {} and applying upper() methods yields {}".format(music, music.upper()))
