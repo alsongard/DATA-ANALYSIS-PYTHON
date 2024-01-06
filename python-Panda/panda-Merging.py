@@ -8,7 +8,6 @@ from IPython.display import display
 location_df = pd.read_csv("./data-Files/location.csv")
 print(location_df)
 print('\n')
-# print("location info :")
 # print(location_df.info)
 print(f"the shape of location_df is {location_df.shape}")
 print("\n")
