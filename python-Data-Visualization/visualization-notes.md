@@ -6,8 +6,9 @@ the matplotlib module can be used for plotting simple charts such as line  and b
 ``import matplotlib.pyplot as plt``
 to plot use the ``plot()`` method which takes in the data set / array
 given the data apple_yields = [1,2...] which is a list, draw line graph
-plt.plot(apple_yields)
-plt.plot(years, apple_yields)
+``plt.plot(apple_yields)
+plt.plot(years, apple_yields)``
+In addition, the plot() function can be used to set the type of marker, line style, marker size e.t.c
 
 ### Addition of labels to axis
 to add respective labels for the data presented use:
@@ -41,3 +42,13 @@ lw | linewidth - used to set the line thickness
 
 ## figuresize()
 the figuresize() can be used to set the size of the figure of the plot
+``plt.figuresize(figsize=(width, height))``
+plt is an alias of matplotlib
+
+## marker
+
+
+## legend
+
+## title
+
