@@ -48,3 +48,8 @@ total_population = countries_df.population.sum()
 print("the total population from all countries is {}".format(total_population))
 print("\n")
 
+
+#Q4:
+overall_life_expectancy = countries_df.life_expectancy.mean()
+print(f"the overall life expectancy of the world is {overall_life_expectancy}")
+print("\n")
