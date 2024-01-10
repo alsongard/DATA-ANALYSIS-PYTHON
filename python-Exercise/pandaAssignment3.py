@@ -53,3 +53,11 @@ print("\n")
 overall_life_expectancy = countries_df.life_expectancy.mean()
 print(f"the overall life expectancy of the world is {overall_life_expectancy}")
 print("\n")
+
+#Q5:
+#try using sort method to sort the population
+highest_number_population = countries_df.population.max()
+print(f"the highest population is {highest_number_population }")
+print("using sort")
+print(countries_df.population.sort())
+print("\n")
