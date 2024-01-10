@@ -35,8 +35,13 @@ print(f"the number of countries are {country_number}")
 print("\n")
 
 
-
-
+# Q2:
+#the unique() method is used to return the elements from a list only oncce
+continents = countries_df.continent.unique()
+print(f"These are the  continents in the countries.csv file  {continents}")
+#to print the number of content use the len() function
+print(f"The number of continents is {len(continents)} ")
+print("\n")
 
 
 
