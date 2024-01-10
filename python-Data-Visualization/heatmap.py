@@ -11,11 +11,12 @@ import pandas as pd
 
 #get the dataset using load_dataset() function
 
-flight_df = sns.load_dataset("flights").pivot("month", "year", "passengers")
-print(flight_df)
+# flight_df = sns.load_dataset("flights").pivot("month", "year", "passengers")
+flights_df = sns.load_dataset("flights").pivot("month", "year", "passengers")
+print(flights_df)
 #using heatmap to visualize the  footfall at the airport
 plt.title("No of Passengers (1000s) ")
-sns.heatmap(flight_df)
+sns.heatmap(flights_df)
 plt.show()
 print("\n")
 
@@ -29,6 +30,6 @@ print("\n")
 #display with actual values for each block in the heatmap
 #cmap and annot
 plt.title("No of passengers")
-sns.heatmap(flight_df, fmt="d", annot=True, cmap="Blues")
+sns.heatmap(flights_df, fmt="d", annot=True, cmap="Blues")
 plt.show()
 
