@@ -1,6 +1,7 @@
 import urllib.request
 import pandas as pd
 from IPython.display import display
+
 #MERGING DATA FROM MULTIPLE SOURCES
 # urllib.request.urlretrieve("https://gist.githubusercontent.com/aakashns/8684589ef4f266116cdce023377fc9c8/raw/99ce3826b2a9d1e6d0bde7e9e559fc8b6e9ac88b/locations.csv" ,"./data-Files/location.csv")
 

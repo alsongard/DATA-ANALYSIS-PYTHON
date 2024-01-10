@@ -12,9 +12,9 @@ print("the data type of covid_df is {}".format(type(covid_df)))
 print("\n")
 print("Date data in covid_df :")
 print(covid_df.date)
-print("the data type of covid_df.date is {}".format(type(covid_df.date)))
+print("the data type of covid_df.date is {} and is dtype is {}".format(type(covid_df.date), covid_df.date.dtype))
 print("\n")
-#convert the object or covid_df.date to datetime
+#convert the object of covid_df.date to datetime
 print("convert covid_df.date to datetime")
 covid_df['date'] = pd.to_datetime(covid_df.date)
 print(covid_df.date.dtype)#returns datetime64[ns]
@@ -26,8 +26,8 @@ covid_df['day'] = pd.DatetimeIndex(covid_df.date).day#day of the week in date
 covid_df['weekday'] = pd.DatetimeIndex(covid_df.date).weekday#weekday is the day of the week
 print(covid_df)
 print('\n')
-with pd.option_context("display.max_rows", 250):
-    display(covid_df)
+# with pd. option_context("display.max_rows", 250):
+#     display(covid_df)
 
 #query rows for May month
 print("the data for the month of may :")
@@ -50,9 +50,12 @@ print("\n")
 # check if average number of cases in sunday and monday and total average sunday cases use weekday to select day of week
 sunday_avrg = covid_df[covid_df.weekday== 6].new_cases.mean()
 monday_avrg = covid_df[covid_df.weekday == 0].new_cases.mean()
-#or sunday_data = covid_df[covid_df.weekday == 6]
-#sundayAvrg = sunday_data.new_cases.sum()
-print(sunday_avrg)
+# sunday_data = covid_df[covid_df.weekday == 6]
+# sundayAvrg = sunday_data.new_cases.sum()#return sum of cases not average
+print(f"the average cases of sunday is {sunday_avrg}")
+print(f"the average cases of monday is {monday_avrg}")
+
+# print(sundayAvrg)
 #check average/mean of new_cases in the whole covid period
 new_cases_avrg = covid_df.new_cases.mean()
-print(new_cases_avrg)
+print(f"the total average number of cases is {new_cases_avrg}")
