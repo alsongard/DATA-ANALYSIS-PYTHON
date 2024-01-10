@@ -43,5 +43,8 @@ print(f"These are the  continents in the countries.csv file  {continents}")
 print(f"The number of continents is {len(continents)} ")
 print("\n")
 
-
+#Q3:
+total_population = countries_df.population.sum()
+print("the total population from all countries is {}".format(total_population))
+print("\n")
 
