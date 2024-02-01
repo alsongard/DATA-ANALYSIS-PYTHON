@@ -1,28 +1,46 @@
-								#INTRODUCTION TO PANDAS
-import urllib.request
+# INTRODUCTION TO PANDAS
+
+## Features
+
+### urllib.request
+the urllib.request is used to download files from the internet to your machine.
+``import urllib.request``
+syntax for using the command is: 
 urlllib.request.retreive ( web-url, file-name-location)
-	import pandas as pd  #alias used in the prgm is pd
-covid_df = pd.read_csv("file_path")
-	to read data frm fiile use 
-	Data is read and stored in a DataFrame structure which is a core object 		in Pandas library. Most variables have a suffix variableName_df
-type(covid_df)
-	return DataFrame structure
-print(covid_df)
-dataFrameVariable.info()
-covid_df.info()
-	the statement above is used to provide some basic information about the data frame such as the number of columns, row count and data types
-dataFrameVariable.describe()
-covid_df.describe()
-	the describe() method is used to provide statistical information about numerical columns such as mean, standard deviation, max/min values and the number of non-empty values 
-dataFrameVariable.colums()
-covid_df.columns()
-	the columns method is used to return the header columns within the dataFrame variable
-dataFrameVariable.shape()
-covid_df.shape()
-	the shape return the number of rows and columns of the df object
+
+### pandas module
+the pandas module offers various functions and is used for dataframes object
+syntax : ``import pandas as pd ``  
+alias used in the prgm is pd
+
+To read data frm fiile use 
+``covid_df = pd.read_csv("file_path")``
+Data is read and stored in a DataFrame structure which is a core object	in Pandas library. Most variables have a suffix variableName_df
+``print(type(covid_df))`` it return DataFrame structure
+print(covid_df) returns the dataframe object which consist of the data from the csv file.
+
+### info()
+Syntax : ``dataFrameVariable.info()``
+``covid_df.info()``
+the statement above is used to provide some basic information about the data frame such as the number of columns, row count and data types
+
+### describe()
+Syntax : ``dataFrameVariable.describe()``
+``covid_df.describe()``
+the describe() method is used to provide statistical information about numerical columns such as mean, standard deviation, max/min values and the number of non-empty values 
+
+### columns()
+Suntax : ``dataFrameVariable.colums()``
+``covid_df.columns()``
+the columns method is used to return the header columns within the dataFrame variable
+
+### shape()
+Syntax : ``dataFrameVariable.shape()``
+``covid_df.shape()``
+the shape return the number of rows and columns of the df object
 
 
-								#RETRIEVING DATA FROM A DATA FRAME
+# RETRIEVING DATA FROM A DATA FRAME
 	dataFrames in panda store data similar to a dictionary, incase of retreiving data
 	example : 
 	# Pandas format is simliar to this
@@ -59,27 +77,27 @@ print(type(covid_df["new_deaths"]))
 	np.array(arrayName or [list_of_values])
 #accessing a value based on its index
 print(covid_df['new_deaths'][110])
-#at() method
+### at() method
 	pandas provide a similar method to the above by using the at[]method takes 2 arguments
 print(covid_df.at[row_number, column_data])
 print(covid_df.at[243, new_deaths or any column data])
-#column_name
+### column_name
 	another way to access a dataFrame column is using the name of that colum in our case
 print(covid_df.new_deaths)
 print(covid_df.new_cases)
 print(covid_df.new_test)
 	however this only works for column names which have no spaces or special characters
-#retrieving several columns of data by
+### retrieving several columns of data by
 case_df = covid_df[['date' , 'new_cases' ]]
 print(case_df)
 print(case_df.shape / type(case_df) / case_df.description() / case_df.info() )
 	the case_df dataFrame variable uses the same memory as that of the covid_df dataFrame variable, hence changing either values affect 	the other dataframeVariable, however these enable efficient memory use 
-#copy()
+### copy()
 	the copy() methd is used to copy data from 1 dataframe object to another and changing either value doesn't affect each other
 covid_df_copy = covid_df.copy()
 print(covid_df_copy)
-#loc[]
-	the .loc[] method is used to return data based on the given index of the row
+### loc[]
+	the .loc[] method is used to return  the entire row data based on the given index
 	Example
 print(dataFrame.loc[index_number])
 print(covid_df.loc[243])
@@ -91,27 +109,27 @@ new_tests        53541.0
 Name: 243, dtype: object
 	it return all the data of that row including the keys/header and with their values
 print(type(covid_df.loc[234]))
-#head() #tail()
+### head() #tail()
 	the head method is used to return a the first 5 lines of the dataFrame object or the given number of lines
 print(covid_df.head() or covid_df.head(5))
 	the tail method is the vice versa of the head() method
 print(covid_df.tail() or covid_df.tail())
-#first_valid_index()
+### first_valid_index()
 	the method above returns the row number/index that has a valid index number and not Nan
 	Nan results when the row of the comma seperated value file has no value it's empty  and not zero
 print(covid_df.new_test.first_valid_index())
 111 //it has returned the index 111
-#loc[]
+### loc[]
 	one can also use the .loc[] to print the range of the values
 print(covid_df.loc[108:133])
 	returns a range of values
-#sample()
+### sample()
 	this methd return random numbers of the dataFrame Object and it takes in an argument which is the number of rows to return
 print(covid_df.sample(10))
 
 			#ANALYZING DATA FROM DATA FRAMES
 total number of reported cases and deaths related in italy from the covid_df object
-#read data from file
+### read data from file
 covid_df = pd.read_csv("./myDAta/covid-results.csv")
 
 #cases select row cases

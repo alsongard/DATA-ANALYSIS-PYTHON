@@ -75,7 +75,7 @@ print("the data type of day in tip_df is {} and dtype is {}".format(type(tips_df
 # tips_df["day"] = pd.to_datetime(tips_df.day).day
 # print(tips_df) did not work
 
-#draw a bar graph to visualiza the average bill for the days
+#draw a bar graph to visualize the average bill for the days
 #one way to do this is to compute the day-wise averages #exercise
 saturday_average_bill = saturday_data_df.total_bill.mean()
 print(f"the average total_bill of is {saturday_average_bill}")
@@ -97,4 +97,5 @@ print(f"the average total bill of female is {female_data_df.total_bill.mean()}")
 
 #one can also plot the graph horizontally
 sns.barplot(y="day", x="total_bill", hue="sex", data=tips_df)
+#the entry given to the plot function must be in the dataframe object e.g total bill is not while total_bill is 
 plt.show()
