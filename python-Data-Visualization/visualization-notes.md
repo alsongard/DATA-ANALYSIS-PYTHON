@@ -13,17 +13,21 @@ In addition, the plot() function can be used to set the type of marker, line sty
 ### Addition of labels to axis
 to add respective labels for the data presented use:
 the xlabel("name_of_axis") and ylabel("name_of_axis") property
-plt.xlabel("Year")
-plt.ylabel("apple_yields")
+```
+    plt.xlabel("Year")
+    plt.ylabel("apple_yields")
+```
 
 ### Plotting Multiples lines
-years = list(range(2000,2012))
-apple = [1, 23, 31, 51, ....]
-oranges = [1, 23, 31, 51, ....]
-plt.plot(years, oranges)
-plt.plot(years, apple)
-plt.xlabel("years")
-plt.ylabel("fruit yields")
+```
+    years = list(range(2000,2012))
+    apple = [1, 23, 31, 51, ....]
+    oranges = [1, 23, 31, 51, ....]
+    plt.plot(years, oranges)
+    plt.plot(years, apple)
+    plt.xlabel("years")
+    plt.ylabel("fruit yields")
+```
 
 ### Line styles 
 line styles can be used to edit how line graph appears
