@@ -48,7 +48,7 @@ may_data = covid_df_may[['new_tests', 'new_cases', 'new_deaths']]
 print(may_data.sum())
 print("\n")
 # check if average number of cases in sunday and monday and total average sunday cases use weekday to select day of week
-sunday_avrg = covid_df[covid_df.weekday== 6].new_cases.mean()
+sunday_avrg = covid_df[covid_df.weekday == 6].new_cases.mean()
 monday_avrg = covid_df[covid_df.weekday == 0].new_cases.mean()
 # sunday_data = covid_df[covid_df.weekday == 6]
 # sundayAvrg = sunday_data.new_cases.sum()#return sum of cases not average

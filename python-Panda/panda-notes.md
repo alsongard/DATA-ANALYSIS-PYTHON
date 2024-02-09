@@ -6,7 +6,7 @@
 the urllib.request is used to download files from the internet to your machine.
 ``import urllib.request``
 syntax for using the command is: 
-urlllib.request.retreive ( web-url, file-name-location)
+``urlllib.request.retreive ( web-url, file-name-location)``
 
 ### pandas module
 the pandas module offers various functions and is used for dataframes object
@@ -30,13 +30,19 @@ Syntax : ``dataFrameVariable.describe()``
 the describe() method is used to provide statistical information about numerical columns such as mean, standard deviation, max/min values and the number of non-empty values 
 
 ### columns()
-Suntax : ``dataFrameVariable.colums()``
-``covid_df.columns()``
+Suntax : 
+```
+	dataFrameVariable.colums()
+	covid_df.columns()
+```
 the columns method is used to return the header columns within the dataFrame variable
 
 ### shape()
-Syntax : ``dataFrameVariable.shape()``
-``covid_df.shape()``
+Syntax : 
+```
+	dataFrameVariable.shape()
+	covid_df.shape()
+```
 the shape return the number of rows and columns of the df object
 
 
@@ -68,39 +74,56 @@ print(covid_df)
 
 
 	Example of retrieving data from column  new_deaths by using the indexing notation
-print(covid_df["new_deaths"])
-	the data returned above will of the key new_deaths and values which are lists containing the same data type
+``print(covid_df["new_deaths"])``
+	the data returned above will be of the key new_deaths and values which are lists containing the same data type
+
+```
 print(type(covid_df["new_deaths"]))
-``<class 'pandas.core.series.Series'>``
+<class 'pandas.core.series.Series'>
+```
 	return a Series 
 	each column in a dataFrame object /dataFrame is called a Series which is essentially a nump array with the same mthds and properties
 	np.array(arrayName or [list_of_values])
+
 #accessing a value based on its index
-print(covid_df['new_deaths'][110])
+``print(covid_df['new_deaths'][110])``
+
 ### at() method
-	pandas provide a similar method to the above by using the at[]method takes 2 arguments
-print(covid_df.at[row_number, column_data])
-print(covid_df.at[243, new_deaths or any column data])
+pandas provide a similar method to the above by using the at[]method takes 2 arguments
+```
+	print(covid_df.at[row_number, column_data])
+	print(covid_df.at[243, new_deaths or any column data])
+```
 ### column_name
-	another way to access a dataFrame column is using the name of that colum in our case
-print(covid_df.new_deaths)
-print(covid_df.new_cases)
-print(covid_df.new_test)
-	however this only works for column names which have no spaces or special characters
+another way to access a dataFrame column is using the name of that colum in our case
+```
+	print(covid_df.new_deaths)
+	print(covid_df.new_cases)
+	print(covid_df.new_test)
+```
+however this only works for column names which have no spaces or special characters
+
 ### retrieving several columns of data by
-case_df = covid_df[['date' , 'new_cases' ]]
-print(case_df)
-print(case_df.shape / type(case_df) / case_df.description() / case_df.info() )
-	the case_df dataFrame variable uses the same memory as that of the covid_df dataFrame variable, hence changing either values affect 	the other dataframeVariable, however these enable efficient memory use 
+```
+	case_df = covid_df[['date' , 'new_cases' ]]
+	print(case_df)
+	print(case_df.shape / type(case_df) / case_df.description() / case_df.info() )
+```
+the case_df dataFrame variable uses the same memory as that of the covid_df dataFrame variable, hence changing either values affect the other dataframeVariable, however these enable efficient memory use .
+
 ### copy()
-	the copy() methd is used to copy data from 1 dataframe object to another and changing either value doesn't affect each other
-covid_df_copy = covid_df.copy()
-print(covid_df_copy)
+the copy() methd is used to copy data from 1 dataframe object to another and changing either value doesn't affect each other
+```
+	covid_df_copy = covid_df.copy()
+	print(covid_df_copy)
+```
 ### loc[]
-	the .loc[] method is used to return  the entire row data based on the given index
-	Example
-print(dataFrame.loc[index_number])
-print(covid_df.loc[243])
+the .loc[] method is used to return  the entire row data based on the given index
+Example
+```
+	print(dataFrame.loc[index_number])
+	print(covid_df.loc[243])
+```
 Using loc[] method to retrieve data : 
 date          2020-08-30
 new_cases         1444.0
