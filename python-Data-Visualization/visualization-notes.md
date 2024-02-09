@@ -27,6 +27,7 @@ the xlabel("name_of_axis") and ylabel("name_of_axis") property
     plt.plot(years, apple)
     plt.xlabel("years")
     plt.ylabel("fruit yields")
+    
 ```
 
 ### Line styles 
@@ -40,25 +41,26 @@ c | color - used to set the color of the line
 
 ### figuresize()
 the figuresize() can be used to set the size of the figure of the plot
-``plt.figuresize(figsize=(width, height))``
+``plt.figure(figsize=(width, height))``
 plt is an alias of matplotlib
 
 ### marker
 the markers is used to set the type of marker for the graph
 the marker can be set to o,s .e.t.c for more information check [Seaborn markers]("")
-``markers="s"`` 
+``markers="s"`` : set to square
+``markers = "c"`` : set to circle
 
 ### legend
 The legend is used to describe the data represented in the graph.
 Example: Can be used whereby a user is plotting 2 different datasets apples and oranges
-``plt.legend(["apples","oranges"])
+``plt.legend(["apples","oranges"])``
 
 ### title
 Used to set the title of the graph
 ``plt.title("title-name")``
 
 ### load_dataset()
-the load_dataset is a function provided by the seaborn library that can be used to load dataset files
+the load_dataset is a function provided by the seaborn library that can be used to load dataset files provided by the seaborn module. Note this won't work on custom or user files 
 ``tips_df = load_dataset("tips)``
 
 ### roud()
