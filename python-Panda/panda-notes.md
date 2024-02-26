@@ -6,7 +6,7 @@
 the urllib.request is used to download files from the internet to your machine.
 ``import urllib.request``
 syntax for using the command is: 
-``urlllib.request.retreive ( web-url, file-name-location)``
+``urllib.request.retreive ( web-url, file-name-location)``
 
 ### pandas module
 the pandas module offers various functions and is used for dataframes object
@@ -277,29 +277,30 @@ covid_df['total_deaths'] = covid_df.new_deaths.cumsum()
 print(covid_df)
 
 		#MERGING DATA FRM MULTIPLE SOURCES
-import pandas as pd
-from IPython.display import display
-import urllib.request
-urllib.request.urlretrieve("url", locationFileName)
-url.request.urlretrieve('https://gist.githubusercontent.com/aakashns/8684589ef4f266116cdce023377fc9c8/raw/99ce3826b2a9d1e6d0bde7e9e559fc8b6e9ac88b/locations.csv', "./data-Files/location.csv")
-#convert file to dataFrameObject
-location_df = pd.read_csv(locationFileName)
-print(location_df)
-#print data on italy only
-italy_df = location_df[location_df.location == "Italy"]
-print(location_df[location_df.location == "italy"])      
+```
+	import pandas as pd
+	from IPython.display import display
+	import urllib.request
+	#urllib.request.urlretrieve("url", locationFileName)
+	url.request.urlretrieve('https://gist.githubusercontent.com/aakashns/8684589ef4f266116cdce023377fc9c8/raw/99ce3826b2a9d1e6d0bde7e9e559fc8b6e9ac88b/locations.csv', "./data-Files/location.csv")
+	#convert file to dataFrameObject
+	location_df = pd.read_csv(locationFileName)
+	print(location_df)
+	#print data on italy only
+	italy_df = location_df[location_df.location == "Italy"]
+	print(location_df[location_df.location == "italy"])      
 
-#merging operation
-#to perform a merging operation we require to 2 or more columns however in our case we are using 2 in which one column must have a common value.
-#to do this we add the location which is italy to our covid_df object
-covid_df["location"] = "Italy"
-print(covid_df) #return a new_raw of data
-#to add columns from location_df to covid_df using .merge()
-merged_df = covid_df.merge(location_df, on="location")
-print(merged_df)
-#the merge functions takes 2 arguments, one being dataFrameObject frm which data is to be merged and which column is common
-covid_merge_df = covid_df.merge(location_df, on="location")
-
+	#merging operation
+	#to perform a merging operation we require to 2 or more columns however in our case we are using 2 in which one column must have a common value.
+	#to do this we add the location which is italy to our covid_df object
+	covid_df["location"] = "Italy"
+	print(covid_df) #return a new_raw of data
+	#to add columns from location_df to covid_df using .merge()
+	merged_df = covid_df.merge(location_df, on="location")
+	print(merged_df)
+	#the merge functions takes 2 arguments, one being dataFrameObject frm which data is to be merged and which column is common
+	covid_merge_df = covid_df.merge(location_df, on="location")
+'''
 			#OUTPUT TO FILE
 result_df = merged_df[['date',
                        'new_cases', 
