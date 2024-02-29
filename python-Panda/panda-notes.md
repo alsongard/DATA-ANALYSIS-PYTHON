@@ -10,7 +10,8 @@ syntax for using the command is:
 
 ### pandas module
 the pandas module offers various functions and is used for dataframes object
-syntax : ``import pandas as pd ``  
+syntax :
+ ``import pandas as pd ``  
 alias used in the prgm is pd
 
 To read data frm fiile use 
@@ -30,34 +31,32 @@ Syntax : ``dataFrameVariable.describe()``
 the describe() method is used to provide statistical information about numerical columns such as mean, standard deviation, max/min values and the number of non-empty values 
 
 ### columns()
-Suntax : 
-```
-	dataFrameVariable.colums()
-	covid_df.columns()
-```
+Suntax : dataFrameVariable.colums()
+``covid_df.columns() ``
 the columns method is used to return the header columns within the dataFrame variable
 
 ### shape()
-Syntax : 
-```
-	dataFrameVariable.shape()
-	covid_df.shape()
-```
+Syntax : dataFrameVariable.shape
+``	covid_df.shape``
 the shape return the number of rows and columns of the df object
 
 
 # RETRIEVING DATA FROM A DATA FRAME
-	dataFrames in panda store data similar to a dictionary, incase of retreiving data
-	example : 
-	# Pandas format is simliar to this
+dataFrames in panda store data similar to a dictionary, incase of retreiving data
+example : 
+```
+# Pandas format is simliar to this
 covid_data_dict = {
     'date':       ['2020-08-30', '2020-08-31', '2020-09-01', '2020-09-02', '2020-09-03'],
     'new_cases':  [1444, 1365, 996, 975, 1326],
     'new_deaths': [1, 4, 6, 8, 6],
     'new_tests': [53541, 42583, 54395, None, None]
     'keys': ['values'//list of items of sametype]
-} 
-	this is the same as the dataFrameVariableObject covid_df = pd.read_csv("./file-Data/covid-data.csv")
+
+}
+``` 
+this is the same as the dataFrameVariableObject covid_df = pd.read_csv("./file-Data/covid-data.csv")
+```
 print(covid_df)
            date  new_cases  new_deaths  new_tests //these are the keys
 0    2019-12-31        0.0         0.0        NaN //these are values
@@ -71,21 +70,26 @@ print(covid_df)
 245  2020-09-01      996.0         6.0    54395.0
 246  2020-09-02      975.0         8.0        NaN
 247  2020-09-03     1326.0         6.0        NaN
+```
 
-
-	Example of retrieving data from column  new_deaths by using the indexing notation
+Example of retrieving data from column  new_deaths by using the indexing notation
 ``print(covid_df["new_deaths"])``
-	the data returned above will be of the key new_deaths and values which are lists containing the same data type
+the data returned above will be of the key new_deaths and values which are lists containing the same data type
 
 ```
 print(type(covid_df["new_deaths"]))
 <class 'pandas.core.series.Series'>
 ```
-	return a Series 
-	each column in a dataFrame object /dataFrame is called a Series which is essentially a nump array with the same mthds and properties
-	np.array(arrayName or [list_of_values])
+return a Series 
+each column in a dataFrame object /dataFrame is called a Series which is essentially a nump array with the same mthds and properties
+np.array(arrayName or [list_of_values])
+```
+myList = [1,2,3,4,5,6,7,8,9]
+np.array([1,2,3,4,5]) || np.array(myList)
+```
 
-#accessing a value based on its index
+## accessing values in a dataframe 
+## accessing a value based on its index
 ``print(covid_df['new_deaths'][110])``
 
 ### at() method
@@ -123,59 +127,67 @@ Example
 ```
 	print(dataFrame.loc[index_number])
 	print(covid_df.loc[243])
+	date          2020-08-30
+	new_cases         1444.0
+	new_deaths           1.0
+	new_tests        53541.0
+	Name: 243, dtype: object
 ```
 Using loc[] method to retrieve data : 
-date          2020-08-30
-new_cases         1444.0
-new_deaths           1.0
-new_tests        53541.0
-Name: 243, dtype: object
-	it return all the data of that row including the keys/header and with their values
-print(type(covid_df.loc[234]))
+it return all the data of that row including the keys/header and with their values
+``print(type(covid_df.loc[234]))``
 ### head() #tail()
-	the head method is used to return a the first 5 lines of the dataFrame object or the given number of lines
-print(covid_df.head() or covid_df.head(5))
-	the tail method is the vice versa of the head() method
-print(covid_df.tail() or covid_df.tail())
-### first_valid_index()
-	the method above returns the row number/index that has a valid index number and not Nan
-	Nan results when the row of the comma seperated value file has no value it's empty  and not zero
-print(covid_df.new_test.first_valid_index())
-111 //it has returned the index 111
-### loc[]
-	one can also use the .loc[] to print the range of the values
-print(covid_df.loc[108:133])
-	returns a range of values
-### sample()
-	this methd return random numbers of the dataFrame Object and it takes in an argument which is the number of rows to return
-print(covid_df.sample(10))
+the head method is used to return a the first 5 lines of the dataFrame object or the given number of lines
+print(covid_df.head() or covid_df.head(10))
+the tail method is the vice versa of the head() method
+print(covid_df.tail() or covid_df.tail(10))
 
-			#ANALYZING DATA FROM DATA FRAMES
+### first_valid_index()
+the method above returns the row number/index that has a valid index number and not Nan
+Nan results when the row of the comma seperated value file has no value it's empty  and not zero
+``print(covid_df.new_test.first_valid_index())``
+111 //it has returned the index 111
+
+### loc[]
+one can also use the .loc[] to print the range of the values 
+``print(covid_df.loc[108:133])``
+returns a range of values
+
+### sample()
+this methd return random numbers of the dataFrame Object and it takes in an argument which is the number of rows to return
+``print(covid_df.sample(10))``
+
+# ANALYZING DATA FROM DATA FRAMES
 total number of reported cases and deaths related in italy from the covid_df object
 ### read data from file
-covid_df = pd.read_csv("./myDAta/covid-results.csv")
+``covid_df = pd.read_csv("./myDAta/covid-results.csv")``
 
-#cases select row cases
+### cases select row cases
+```
 total_cases = covid_df.new_cases.sum()
 total_deaths = covid_df.new_deaths.sum()
+```
 
-#overall death rate(ration of deaths to cases)
-death_rate = (covid_df.new_deaths.sum() / covid_df.new_cases.sum())
+##### overall death rate(ration of deaths to cases)
+``death_rate = (covid_df.new_deaths.sum() / covid_df.new_cases.sum())``
 
-#overall number of test conducted given prior covid test is 935410 test
+##### overall number of test conducted given prior covid test is 935410 test
+```
 initial_tests = 935410
 total_covid_tests = initial_tests + covid_df.new_tests.sum()
+```
 
-#number of tests that were positive and negative
-
+#### number of tests that were positive and negative
+```
 #total for the whole tests
 negative = covid_df.tests.sum() - covid_df.new_cases.sum()
 positive = covid_df.new_cases.sum()
 #fraction of cases returned a positive result
 positive_rate = covid_df.new_cases.sum() / covid_df.tests.sum()
-	
+```
 
-			#QUERY AND SORTING DATA
+# QUERY AND SORTING DATA
+```
 #READ FILE
 import pandas as pd
 covid_df = pd.read_csv("file-path")
@@ -184,8 +196,9 @@ high_new_cases = covid_df.new_cases > 1000
 print(high_new_cases)
 #it return true and false values depending on the new_cases value for each row, however with a few rows 
 print(covid_df[high_new_cases])
+print(covid_df[covid_df.new_cases > 1000])
 #to display more use
-from IPython.display import display or import display
+from IPython.display import display
 with pd.option_context("display.max_rows", 100):
 	display(covid_df.new_cases[high_new_cases])
 	display(covid_df[covid_df.new_cases > 1000])
@@ -195,7 +208,9 @@ print(positive_rate) #return boolean values
 print(covid_df[positive_rate])#return only values that  have true
 with pd.option_context("display.max_rows", 100):
 	display(covid_df[positive_rate])
-	
+```
+*********** 
+```
 #the result of performing an operation between 2 columns is a new column
 positive_rate_data = covid_df.new_cases / covid_df.new_tests
 #to add column to data
@@ -207,12 +222,12 @@ with pd.option_context("display.max_rows", 250):
 
 also one can sort data in rows using the .sort_values() method which takes in the "column", order(which can be ascending or descending)
 E.g 
-	covid_df.sort_values("new_cases", ascending=False).head(10)
-	month of march has the highest cases the largest being 6557.0
-	
-	
-			#WORKING WITH DATES
+covid_df.sort_values("new_cases", ascending=False).head(10)
+month of march has the highest cases the largest being 6557.0
+```
+# WORKING WITH DATES
 the pandas library offers many methods to work with dates
+```
 #read file
 import pandas as pd
 covid_df = pd.read_csv("file-location")
