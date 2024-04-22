@@ -1,5 +1,5 @@
 """
-    dictionaries are used to collect unordered or data of different data types
+    dictionaries are used to collect jordered or data of different data types
     to declare a dictionary use the {} curly braces
     also it consist of a value and a key that points to its data
 
@@ -30,14 +30,14 @@ print("our dictionary is {}".format(person))
 person2 = dict(name="kelly", age=23, gender="female", maritalStatus="single")
 print(person2)
 print(person2['name'])
-print(person2.get('age'))
+print(person2.get('age'))#no error if no key is found
 
 result = "address" in person2
 print(result)  
 print("\n\n")
 operatingSystem = dict(name = "kali", purpose = "pentesting & programming", version=11.3, manufacturer="linus Tovalds")
 print(operatingSystem)
-print(operatingSystem.get("name", "unknown"))
+print(operatingSystem.get("name"))
 ##modifying values
 operatingSystem['name'] = "Windows"
 print(operatingSystem.get("name"))
